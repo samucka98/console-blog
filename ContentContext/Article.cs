@@ -8,7 +8,14 @@ namespace Consoleblog.ContentContext
       ContentText = contentText;
       Autor = autor;
       Categoria = categoria;
+
+      if (autor == null)
+        throw new Exception("Para criar um novo artigo é necessário informar um autor!");
+
+      if (categoria == null)
+        throw new Exception("para cria um novo artigo é necessário informar uma categoria!");
     }
+
     public string ContentText { get; set; }
     public Author Autor { get; set; }
     public Category Categoria { get; set; }
