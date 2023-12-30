@@ -9,6 +9,7 @@ namespace Consoleblog
       var categoria = new Category("Backend", "backend");
       var autor = new Author("Samuel Ibiapino", "samuel-ibiapino");
       var article = new Article("Api completa usando ASP.NET", "api-completa-aspnet", "Bla bla bla...", autor, categoria);
+      autor.Articles.Add(article);
 
       Console.WriteLine($"ID: {article.Id}");
       Console.WriteLine($"Titulo: {article.Title}");
