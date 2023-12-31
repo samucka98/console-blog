@@ -4,14 +4,14 @@ namespace Consoleblog.NotificationContext
   {
     public List<Notification> Notifications { get; set; }
 
-    public void Add(Notification notification)
+    public void AddNotification(Notification notification)
     {
-      Notifications.AddNotification(notification);
+      Notifications.Add(notification);
     }
 
-    public void AddRange(IEnumerable<Notification> notifications)
+    public void AddNotifications(IEnumerable<Notification> notifications)
     {
-      Notifications.AddNotifications(notifications);
+      Notifications.AddRange(notifications);
     }
   }
 }
