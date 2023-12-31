@@ -6,12 +6,12 @@ namespace Consoleblog.NotificationContext
 
     public void Add(Notification notification)
     {
-      Notifications.Add(notification);
+      Notifications.AddNotification(notification);
     }
 
     public void AddRange(IEnumerable<Notification> notifications)
     {
-      Notifications.AddRange(notifications);
+      Notifications.AddNotifications(notifications);
     }
   }
 }
