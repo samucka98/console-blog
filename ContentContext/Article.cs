@@ -1,3 +1,5 @@
+using Consoleblog.NotificationContext;
+
 namespace Consoleblog.ContentContext
 {
   public class Article : Content
@@ -10,10 +12,10 @@ namespace Consoleblog.ContentContext
       Categoria = categoria;
 
       if (autor == null)
-        throw new Exception("Para criar um novo artigo é necessário informar um autor!");
+        AddNotification(new Notification("Autor", "O autor nao esta presente!"));
 
       if (categoria == null)
-        throw new Exception("para cria um novo artigo é necessário informar uma categoria!");
+        AddNotification(new Notification("Categoria", "A categoria nao esta presente!"));
     }
 
     public string ContentText { get; set; }
