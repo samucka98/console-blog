@@ -3,7 +3,11 @@ namespace Consoleblog.NotificationContext
   public sealed class Notification
   {
 
-    public Notification() { }
+    public Notification()
+    {
+      Property = "";
+      Message = "";
+    }
 
     public Notification(string property, string message)
     {
