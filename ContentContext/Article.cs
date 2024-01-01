@@ -20,7 +20,7 @@ namespace Consoleblog.ContentContext
       }
       else
       {
-        new SetService().SerServiceAuthor(this, new AuthorService());
+        new SetService().SetServiceAuthor(this, new AuthorService());
         Signature();
       }
 
