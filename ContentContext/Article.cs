@@ -4,6 +4,9 @@ namespace Consoleblog.ContentContext
 {
   public class Article : Content
   {
+    public delegate void ArticleCreatedHandler(Author autor, Article article);
+    public event ArticleCreatedHandler? NewArticleCreated;
+
     public Article(string title, string slug, string contentText, Author autor, Category categoria)
     : base(title, slug)
     {
@@ -12,7 +15,15 @@ namespace Consoleblog.ContentContext
       Categoria = categoria;
 
       if (autor == null)
+      {
         AddNotification(new Notification("Autor", "O autor nao esta presente!"));
+      }
+      else
+      {
+        new SetService().SerServiceAuthor(this, new AuthorService());
+        Signature();
+      }
+
 
       if (categoria == null)
         AddNotification(new Notification("Categoria", "A categoria nao esta presente!"));
@@ -21,5 +32,10 @@ namespace Consoleblog.ContentContext
     public string ContentText { get; set; }
     public Author Autor { get; set; }
     public Category Categoria { get; set; }
+
+    public void Signature()
+    {
+      NewArticleCreated?.Invoke(Autor, this);
+    }
   }
 }
