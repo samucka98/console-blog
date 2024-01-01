@@ -1,3 +1,5 @@
+using Consoleblog.SharedContext;
+
 namespace Consoleblog.ContentContext
 {
   public abstract class Content : Base

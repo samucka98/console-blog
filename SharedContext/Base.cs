@@ -1,6 +1,6 @@
 using Consoleblog.NotificationContext;
 
-namespace Consoleblog.ContentContext
+namespace Consoleblog.SharedContext
 {
   public abstract class Base : Notifiable
   {
