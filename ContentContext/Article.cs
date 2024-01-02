@@ -37,5 +37,11 @@ namespace Consoleblog.ContentContext
     {
       NewArticleCreated?.Invoke(Autor, this);
     }
+
+    public void CreateNewArticle()
+    {
+      Console.Clear();
+      Console.WriteLine("");
+    }
   }
 }

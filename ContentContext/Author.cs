@@ -8,5 +8,11 @@ namespace Consoleblog.ContentContext
       Articles = new List<Article>();
     }
     public IList<Article> Articles { get; set; }
+
+    public void CreateNewAuthor()
+    {
+      Console.Clear();
+      Console.WriteLine("Informe o nome do autor.");
+    }
   }
 }
